@@ -1,0 +1,34 @@
+.group {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+/* Animation base for each bubble item */
+.item {
+  transform-origin: right bottom;
+  will-change: transform, opacity;
+  transition: transform 220ms cubic-bezier(.2, .9, .2, 1),
+              opacity 180ms ease;
+}
+
+/* Small subtle appear animation */
+.item:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .group {
+    right: 12px;
+    bottom: 10px;
+    gap: 8px;
+  }
+}
